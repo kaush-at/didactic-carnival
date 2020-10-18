@@ -4,7 +4,9 @@ public class LengthOfTheLastWord {
 
 	public static void main(String[] args) {
 		int count = getTheSizeOfLastWord(" hello   ty  www");
+		int count1 = getTheSizeOfLastWordByReversing(" hello   ty  www ");
 		System.out.println("The length of the last word is : " + count);
+		System.out.println("The length of the last word is by second method: " + count1);
 	}
 
 	// Method 1 -> start iterating from the beginning
@@ -30,6 +32,25 @@ public class LengthOfTheLastWord {
 		} else {
 			return count;
 		}
+	}
+
+	// Method 2 -> Reverse and get the first letter count
+	public static int getTheSizeOfLastWordByReversing(String word) {
+		String revString = "";
+		int count = 0;
+		for (int i = word.length() - 1; i >= 0; i--) {
+			revString += word.charAt(i);
+		}
+		for (int i = 0; i < revString.length(); i++) {
+			if (revString.charAt(i) != ' ') {
+				count++;
+			}
+			if (count > 0 && revString.charAt(i) == ' ') {
+				return count;
+			}
+		}
+
+		return count;
 	}
 
 }
