@@ -35,6 +35,11 @@ public class FindLongestCommonPrefix {
 	public static StringBuilder commonPrefix(String[] arr) {
 		StringBuilder builder = new StringBuilder();
 		
+		// to validate arr whether is empty or not
+		if(arr.length == 0) {
+			return builder;
+		}
+		
 		String minString = findMinString(arr);
 		
 		for (int i = 0; i < minString.length(); i++) {
