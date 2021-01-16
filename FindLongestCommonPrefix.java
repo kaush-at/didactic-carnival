@@ -1,7 +1,5 @@
 package com.kaush.udmy.dsa2020;
 
-import java.util.Arrays;
-
 /*
  * 	ex1/ ["abcdef","acdrft","axced"]  => "a"
  * 
