@@ -1,5 +1,6 @@
 package com.kaush.udmy.dsa2020;
 
+import java.util.Arrays;
 
 /*
  * 	ex1/ ["abcdef","acdrft","axced"]  => "a"
@@ -22,29 +23,34 @@ public class FindLongestCommonPrefix {
 		String [] arr4 = {"geeksforgeeks","geeks","geek", "geezer"};
 		
 		
-		commonPrefix(arr1);
-		commonPrefix(arr2);
-		commonPrefix(arr3);
-		commonPrefix(arr4);
+		System.out.println(commonPrefix(arr1));
+		System.out.println(commonPrefix(arr2));
+		System.out.println(commonPrefix(arr3));
+		System.out.println(commonPrefix(arr4));
 		
 	}
 	
 	
-	// method - 1
-	public static String commonPrefix(String[] arr) {
-		String commonPrefix = "";
+	// method - 1 
+	public static StringBuilder commonPrefix(String[] arr) {
+		StringBuilder builder = new StringBuilder();
 		
-		for (int i = 0; i < arr.length; i++) {
-			String picked = arr[0];
-			char ch = picked.charAt(i);
+		String minString = findMinString(arr);
+		
+		for (int i = 0; i < minString.length(); i++) {
+			char ch = minString.charAt(i);
 			
 			for (int j = 0; j < arr.length; j++) {
-				
+				if(arr[j].charAt(i) != ch) {
+					return builder;
+				}
 			}
+			
+			builder.append(ch);
+			
 		}
 		
-		System.out.println(commonPrefix);
-		return commonPrefix;
+		return builder;
 		
 	}
 
