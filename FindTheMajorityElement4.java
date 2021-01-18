@@ -2,7 +2,7 @@ package com.kaush.udmy.dsa2020;
 
 import java.util.Arrays;
 
-// moore's voting approach (intuition method)
+// by sorting array and find the mid element
 public class FindTheMajorityElement4 {
 
 	public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class FindTheMajorityElement4 {
 		System.out.println(findMajorityElement(arr4));
 	}
 	
-	// to do this at least one majority element should present
+
 	public static int findMajorityElement(int[] arr) {
 		
 		Arrays.sort(arr);
