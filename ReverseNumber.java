@@ -11,7 +11,9 @@ public class ReverseNumber {
 		int number = sc.nextInt();
 		
 		reverseNumberUsingForLoop(number);
+		reverseNumberUsingDoWhileLoop(number);
 	}
+
 
 	private static void reverseNumberUsingForLoop(int number) {
 		int reversedNumber = 0;
@@ -24,4 +26,15 @@ public class ReverseNumber {
 		System.out.println("Reversed number using for loop : "+ reversedNumber);
 	}
 
+	private static void reverseNumberUsingDoWhileLoop(int number) {
+		int reversedNumber = 0;
+		do {
+			int remainder	 = number % 10;
+			reversedNumber = reversedNumber*10 + remainder;
+			number /= 10;
+		}
+		while(number > 0);
+		
+		System.out.println("Reversed number using do-while loop : "+ reversedNumber);
+	}
 }
