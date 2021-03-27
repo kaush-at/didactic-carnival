@@ -12,7 +12,10 @@ public class ReverseNumber {
 		
 		reverseNumberUsingForLoop(number);
 		reverseNumberUsingDoWhileLoop(number);
+		reverseNumberUsingWhileLoop(number);
 	}
+
+
 
 
 	private static void reverseNumberUsingForLoop(int number) {
@@ -37,4 +40,19 @@ public class ReverseNumber {
 		
 		System.out.println("Reversed number using do-while loop : "+ reversedNumber);
 	}
+	
+	
+	private static void reverseNumberUsingWhileLoop(int number) {
+		int reversedNumber = 0;
+		
+		while(number > 0) {
+			int remainder = number % 10;
+			reversedNumber = reversedNumber*10 + remainder;
+			number /= 10;
+		}
+		System.out.println("Reversed number using while loop : "+ reversedNumber);
+		
+	}
+	
+	
 }
